@@ -1,11 +1,13 @@
-theme: jekyll-theme-cayman
-
 # Site settings
 title: 炫动空间
 description: "随心,随意"
 
+
 # 网站的根路径
 baseurl:     /
-url:         https://whg555.github.io/
+url:         https://whg555.github.io/first/
 # 改变 Jekyll 读取文件的目录
 source:  .
+
+kramdown:
+  input: GFM
