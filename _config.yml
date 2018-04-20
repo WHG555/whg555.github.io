@@ -5,8 +5,9 @@ email: whghcyx@outlook.com
 author: 宏沉一笑
 
 # 网站的根路径
-baseurl:     F:\whg\huxpro.github.io
+
 url:         https://whg555.github.io/first/
+baseurl:     F:\whg\huxpro.github.io
 # 改变 Jekyll 读取文件的目录
 source:  .
 
