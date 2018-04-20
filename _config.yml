@@ -1,12 +1,12 @@
 # Site settings
-title: ìÅ¶¯¿Õ¼ä
-description: "ËæĞÄ,ËæÒâ"
+title: ç‚«åŠ¨ç©ºé—´
+description: "éšå¿ƒ,éšæ„"
 
 
-# ÍøÕ¾µÄ¸ùÂ·¾¶
+# ç½‘ç«™çš„æ ¹è·¯å¾„
 baseurl:     /
 url:         https://whg555.github.io/first/
-# ¸Ä±ä Jekyll ¶ÁÈ¡ÎÄ¼şµÄÄ¿Â¼
+# æ”¹å˜ Jekyll è¯»å–æ–‡ä»¶çš„ç›®å½•
 source:  .
 
 kramdown:
