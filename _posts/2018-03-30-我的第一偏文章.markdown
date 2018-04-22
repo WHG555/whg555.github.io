@@ -1,5 +1,5 @@
 ---
-layout: keynote
+layout: post
 title: "我的第一个文章"
 date: 2018-03-30 22:50:43
 ---
