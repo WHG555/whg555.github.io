@@ -1,0 +1,19 @@
+---
+layout: post  
+title: 我的目标  
+date: 2018-7-29 20:22:19  
+group:   
+tags:   
+---
+#一套高效的开发环境
+###在linux下
+在linux下进行代码的编辑，与代码的修改。
+现在使用了Vim做为主要的编辑软件，加上nerdtree查看目录，taglist查看函数，
+###在window下
+使用source insignt4.0查看代码，有自己的配置
+
+#一个信息采集器
+使用有道云笔记来记录学习到的东西
+#一本笔记本
+在https://whg555.github.io/hcyx/ 分享一些东西
+

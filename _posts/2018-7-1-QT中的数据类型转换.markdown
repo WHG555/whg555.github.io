@@ -1,0 +1,191 @@
+---
+layout: post  
+title: QT中的数据类型转换  
+date: 2018-7-1 0:50:42  
+group:   
+tags: QT  
+---
+QT中有很多的数据类型
+QT中的类型： **QString， QChar， QByteArray， string**  
+还有C语言中的类型: **char, short, int, long, float, double**  
+他们的相互转换方式有很多，下面介绍他们的转换方式。   
+
+---  
+###QString
+说明：QString类提供了一个Unicode文本和经典的C以零结尾的字符数组的抽象。
+* 原始数据
+
+
+	QString  str("13453456542");
+* QChar[]  
+
+说明：将QString的第二个数据转换成QChar类型
+
+
+	QChar str_qchar[str.length()+1];
+    memcpy(str_qchar, str.data(), sizeof(QChar)*str.length());
+    str_qchar[str.length()+1] = '\0';
+
+打印
+
+	qDebug() << "str_qchar[3]" << str_qchar[3];
+	str_qchar '5'
+* QByteArray
+
+说明： 将QString的所有数据转换成QByteArray类型
+
+
+	QByteArray str_byte = str.to
+
+打印
+
+	qDebug() << "str_byte" << str_byte;
+	str_byte "13453456542"
+* char*
+
+说明： 将QString的所有数据转换成char*类型
+
+
+	char *str_char = str_byte.data();
+
+打印
+
+	qDebug() << "char*" << str_char;
+	char* 13453456542
+* char[]
+
+说明： 将QString的所有数据转换成char[]类型
+
+
+	char *str_chbuff = (char *)malloc(str_byte.length() + 1);
+    memset(str_chbuff, 0, str_byte.length());
+    memcpy(str_chbuff, str_byte.data(), str_byte.length());
+    str_chbuff[str_byte.length()] = '\0';
+
+打印
+
+	qDebug() << "str_chbuff" << str_chbuff;
+	str_chbuff 13453456542
+
+---
+###QChar  
+说明： QChar 类是 Qt 中用于表示一个字符的类，实现在 QtCore 共享库中。QChar 类内部用2个字节的Unicode编码来表示一个字符。
+* 原始数据
+
+
+	QChar ch('p');
+
+* char  
+
+说明： 将QChar的数据转换成char类型
+
+
+	char ch_c = ch.toLatin1();
+
+打印
+
+	qDebug() << "ch_c" << ch_c;
+	ch_c p
+* QString  
+
+说明： 将QChar的所有数据转换成QString类型  
+
+	QString ch_str(ch);  
+
+打印
+
+	qDebug() << "ch_str" << ch_str;
+	ch_str "p"
+--- 
+###QByteArray 
+说明： QByteArray类提供了一个字节数组。 
+QByteArray类提供了一个字节的明显共享数组。它对使用自定义数据来操作内存区域是很有用的。QByteArray就是QMemArray<char>的实现。请看QMemArray文档有更详细的信息。 
+ 
+* 原始数据  
+
+
+	QByteArray byte("134534");  
+
+* char*  
+
+说明： 将QByteArray的所有数据转换成char*类型  
+
+	char * byte_ch = byte.data();
+
+打印
+
+	qDebug() << "byte_ch" << byte_ch;
+	byte_ch_c 134534
+* QString  
+
+说明： 将QByteArray的所有数据转换成QString类型  
+
+	QString byte_str(byte);
+
+打印
+
+	qDebug() << "byte_str" << byte_str;
+	byte_str "134534"
+* int  
+
+说明： 将QByteArray的所有数据转换成int类型  
+
+	int byte_int = byte.toInt();
+
+打印
+
+	qDebug() << "byte_int" << byte_int;
+	byte_int 134534
+* float  
+
+说明： 将QByteArray的所有数据转换成float类型  
+
+	QByteArray byte("134534.55");
+	float byte_float = byte.toFloat();
+
+打印
+
+	qDebug() << "byte_float" << byte_float;
+	byte_float 134535
+---  
+###char[]  
+说明：  
+* 原始数据  
+
+---  
+###char 
+说明：  
+* 原始数据  
+
+
+	char c = '8';
+* QString  
+
+说明： 将char的所有数据转换成QString类型  
+
+	QString c_str(c);
+
+打印
+
+	qDebug() << "c_str" << c_str;
+	c_str "8"
+---  
+###short  
+说明：  
+* 原始数据  
+
+---  
+###int  
+说明：  
+* 原始数据  
+
+---  
+###float  
+说明：  
+* 原始数据  
+
+---  
+###double  
+说明：  
+* 原始数据  
+

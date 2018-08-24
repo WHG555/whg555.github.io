@@ -1,0 +1,47 @@
+---
+layout: post  
+title: SS安装教程  
+date: 2018-8-15 23:07:07  
+group:   
+tags:   
+---
+# 下载工具 #  
+如果是centos 的话 先输入 
+
+	yum install wget
+如果是ubuntu或者debian 则输入 
+
+	apt-get install wget
+# 安装 #  
+
+	wget http://mirrors.linuxeye.com/oneinstack.tar.gz
+
+	tar xzf oneinstack.tar.gz
+
+	cd oneinstack
+
+	./ss.sh install  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;输入完毕如果是centos系统后会有2个ss 端供你选择，默认是1 但我们需要选择2，因为支持多用户，ubuntu和debian 无需选择，之后然后会让你输入密码和ss端口  输入后就会自动安装ss所需要的所有环境包，几分钟后安装完毕就会出现 ss ip和 端口+密码了
+
+# 添加用户 #  
+如果想添加 其他ss账户给你的朋友们用也可以
+
+	cd oneinstack
+
+	./shadowsocks.sh adduser
+# 卸载 #  
+命令如下
+
+	cd oneinstack
+
+	./ss.sh uninstall
+# 备注 #  
+某些centos 的得设置下防火墙才能用  
+
+	iptables -X
+
+	iptables -Z
+
+	iptables -F
+
+	service iptables save

@@ -1,0 +1,23 @@
+---
+layout: post  
+title: 添加备注  
+date: 2018-7-13 3:02:43  
+group:   
+tags: CMD  
+---
+脚本如下： 
+
+	if exist "desktop.ini" (goto create) else (goto edit)
+	
+	:create
+	echo 可以编辑
+	notepad.exe ./desktop.ini & exit
+	
+	:edit
+	
+	echo 文件不存在
+	echo 需要创建文件
+	echo [.shellclassinfo] > desktop.ini
+	echo IconResource=C:\Windows\system32\SHELL32.dll,4 >> desktop.ini
+	echo InfoTip=>> desktop.ini
+	notepad.exe desktop.ini

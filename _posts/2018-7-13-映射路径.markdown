@@ -1,0 +1,15 @@
+---
+layout: post  
+title: 映射路径  
+date: 2018-7-13 03:04:29  
+group:   
+tags: CMD  
+---
+脚本如下：
+
+	subst x: /d
+	rem 映射当前路径[%~sdp0]为X:
+	echo off
+	set MY_WORK_PATH=%~sdp0
+	subst X: %MY_WORK_PATH:~0,-1% 
+	subst

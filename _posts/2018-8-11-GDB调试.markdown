@@ -1,0 +1,46 @@
+---
+layout: post  
+title: GDB调试  
+date: 2018-8-11 17:28:34  
+group:   
+tags: Linux  
+---
+## 查看代码 ##  
+* l
+查看上下一共10行的代码
+* l 1，20
+查看1行到20行的代码
+* l main
+查看main函数周围的代码
+## 打断点 ##  
+* b main
+main函数那里打断点
+* b 80
+80行那里打断点
+## 查看变量 ##  
+* info locals
+查看当前函数局部变量
+## 查看数组 ##  
+* x/8x input 
+![](https://i.imgur.com/hqzgCqM.png)
+以8位来查看数据
+* x/16x input 
+![](https://i.imgur.com/rKe9xXO.png)
+以16位来查看数据
+* x/32x input 
+![](https://i.imgur.com/BtYx5oR.png)
+以32位来查看数据
+* x/10b input
+以10进制来查看
+* print input
+打印数据
+## 段错误打印栈 ##
+* bt
+![](https://i.imgur.com/xpQM5m8.png)
+## 查看数据类型 ##  
+* whatis i
+![](https://i.imgur.com/yLXEB8k.png)
+查看i的数据类型
+## 设置变量的值 ##  
+* set variable i=200
+设置i等于200

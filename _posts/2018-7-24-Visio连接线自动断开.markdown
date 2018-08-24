@@ -1,0 +1,16 @@
+---
+layout: post  
+title: Visio连接线自动断开  
+date: 2018-7-24 23:06:49  
+group:   
+tags: Visio  
+---
+##问题##
+使用连接线连接两个图形后，移动其中一个图形，但是之间的线不会动。
+
+##解决方法##
+打开如下位置，点击视觉帮助  
+![视觉帮助](https://whg555.github.io/hcyx/img/image/%E5%AF%B9%E9%BD%90.png)  
+
+将对齐与粘附勾选上  
+![对齐与粘附](https://whg555.github.io/hcyx/img/image/%E8%A7%86%E8%A7%89%E5%B8%AE%E5%8A%A9.png)  

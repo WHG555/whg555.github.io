@@ -1,0 +1,144 @@
+---
+layout: post  
+title: QT_pro文件  
+date: 2018-8-18 17:16:40  
+group:   
+tags: QT  
+---
+
+之前使用Qt的时候都是手写代码的(因为批量按钮可以使用数组实现),但当界面越来越复杂时,这种开发效率就太低了;
+
+后来就开始使用QtDesigner,但要使QtDesigner支持我自己写的控件,需要提升或插件的形式(在<C++ GUI Qt 4编程(第二版)>中有介绍).
+
+结果看了之后,觉得提升的方式简单而不灵活,故使用插件法实现;步骤如下:
+[具体可参照第三方开源组件Qwt部件库的插件类的实现方式，个人感觉特别规范]
+
+1. 继承QObject和QDesignerCustomWidgetInterface实现插件类(或继承QObject和QDesignerCustomWidgetCollectionInterface实现多个自定义控件);
+2. 编写Qt平台无关的工程文件.pro(例如CustomWidgetPlugin.pro);
+3. qmake CustomWidgetPlugin.pro;
+4. make(windows下vc平台使用nmake,如果发现缺少环境变量,可以运行其bin/vcvars32.bat配置环境)
+
+先说说第一点:
+继承后需要重写父类虚函数,原型如下:
+[cpp] view plain copy
+#include <Qt/qobject.h>  
+#include <QtDesigner/QDesignerCustomWidgetInterface>  
+	class CustomWidgetPlugin: public QObject, public QDesignerCustomWidgetInterface  
+	{  
+	    Q_OBJECT                                     // 必须  
+	    Q_INTERFACES(QDesignerCustomWidgetInterface) // 必须  
+	public:  
+	    CustomWidgetPlugin(QObject *parent = 0); // 构造函数,一般使其调用父类QObject的构造函数即可  
+	    QString name() const;                    // 返回由该插件提供的窗口控件的名字  
+	    QString includeFile() const;             // 返回由该插件封装的特定窗口控件的头文件的名称. 这个头文件会包含在由uic生成的代码中  
+	    QString group() const;                   // 返回自定义的窗口控件所属于的在QtDesigner里的组名, 如果QtDesigner没有则会自动创建  
+	    QIcon icon() const;                      // 自定义控件在QtDesigner的图标  
+	    QString toolTip() const;                 // 控件的"提示"  
+	    QString whatsThis() const;               // 控件的"这是什么"  
+	    bool isContainer() const;                // 控件是否包含其他控件,如果有则返回true,否则返回false  
+	    QWidget *createWidget(QWidget *parent);  // QtDesigner会调用这个函数创建自定义控件,返回创建的(C++中可能是new)自定义控件即可  
+	};  
+ 
+在其cpp的最后必须 添加下面的宏:
+[cpp] view plain copy
+Q_EXPORT_PLUGIN2(customWidgetPlugin, CustomWidgetPlugin) // 第一个参数为插件的名字,第二个是插件类的名字(而不是自定义控件的类名)  
+ 
+再说说第二点:
+.pro的参数和语法比较多, 在网上可以搜到不少资料, 在这里总结一下
+1. 注释 
+从“#”开始，到这一行结束。
+
+2. 指定源文件 
+SOURCES = *.cpp
+
+对于多源文件，可用空格分开，如：SOURCES = 1.cpp 2.cpp3.cpp
+或者每一个文件可以被列在一个分开的行里面，通过反斜线另起一行，就像这样:
+
+SOURCES = hello.cpp /(续行符 )
+     main.cpp
+一个更冗长的方法是单独地列出每一个文件，就像这样：
+
+    SOURCES+= hello.cpp
+    SOURCES +=main.cpp
+
+这种方法中使用“+=”比“=”更安全，因为它只是向已有的列表中添加新的文件，而不是替换整个列表。
+
+3. 指定头文件 
+HEADERS = hello.h或者HEADERS += hello.h
+
+列出源文件的任何一个方法对头文件也都适用。
+
+4. 配置信息 
+CONFIG用来告诉qmake关于应用程序的配置信息。
+
+    CONFIG+= qt warn_on release
+
+编译QtDesigner插件中使用CONFIG += desginer plugin release
+
+在这里使用“+=”，是因为我们添加我们的配置选项到任何一个已经存在中。这样做比使用“=”那样替换已经指定的所有选项是更安全的。
+A> qt部分告诉qmake这个应用程序是使用Qt来连编的。这也就是说qmake在连接和为编译添加所需的包含路径的时候会考虑到Qt库的。
+B> warn_on部分告诉qmake要把编译器设置为输出警告信息的。
+C> release部分告诉qmake应用程序必须被连编为一个发布的应用程序。在开发过程中，程序员也可以使用debug来替换release
+
+5. 指定目标文件名 
+TARGET = filename
+
+如果不设置该项目，目标名会被自动设置为跟项目文件一样的名称
+
+6. 添加界面文件(ui ) 
+INTERFACES = filename.ui
+
+7. 平台相关性处理 
+我们在这里需要做的是根据qmake所运行的平台来使用相应的作用域来进行处理。为Windows平台添加的依赖平台的文件的简单的作用域看起来就像这样：
+
+win32 {
+SOURCES += hello_win.cpp
+}
+
+所以如果qmake运行在Windows上的时候，它就会把hello_win.cpp添加到源文件列表中。如果qmake运行在其它平台上的时候，它会很简单地把这部分忽略。
+
+8. 如果一个文件不存在，停止qmake 
+如果某一个文件不存在的时候，你也许不想生成一个Makefile。我们可以通过使用exists()函数来检查一个文件是否存在。我们可以通过使用error()函数把正在运行的qmake停下来。这和作用域的工作方式一样。只要很简单地用这个函数来替换作用域条件。对main.cpp文件的检查就像这样：
+
+!exists( main.cpp ) {
+  error( "No main.cpp file found")
+}
+
+“!”用来否定这个测试，比如，如果文件存在，exists( main.cpp)是真，如果文件不存在，!exists( main.cpp )是真。
+
+9. 检查多于一个的条件 
+假设你使用Windows并且当你在命令行运行你的应用程序的时候你想能够看到qDebug()语句。除非你在连编你的程序的时候使用console设置，你不会看到输出。我们可以很容易地把console添加到CONFIG行中，这样在Windows下，Makefile就会有这个设置。但是如果告诉你我们只是想在当我们的应用程序运行在Windows下并且当debug已经在CONFIG行中的时候，添加console。这需要两个嵌套的作用域；只要生成一个作用域，然后在它里面再生成另一个。把设置放在最里面的作用域里，就像这样：
+
+win32 {
+  debug {
+     CONFIG += console
+  }
+}
+
+嵌套的作用域可以使用冒号连接起来，像这样：
+
+win32:debug {
+CONFIG += console
+}
+
+10. 摸板 
+模板变量告诉qmake为这个应用程序生成哪种makefile。下面是可供使用的选择：
+
+A> app -建立一个应用程序的makefile。这是默认值，所以如果模板没有被指定，这个将被使用。
+B> lib - 建立一个库的makefile。
+C> vcapp - 建立一个应用程序的VisualStudio项目文件。
+D> vclib - 建立一个库的VisualStudio项目文件。
+E> subdirs -这是一个特殊的模板，它可以创建一个能够进入特定目录并且为一个项目文件生成makefile并且为它调用make的makefile。
+
+如果需要编译成windows的dll库,可以在CONFIG中添加一个配置"CONFIG += dll"实现
+
+11. 生成Makefile 
+当你已经创建好你的项目文件，生成Makefile就很容易了，你所要做的就是先到你所生成的项目文件那里然后输入：
+
+Makefile可以像这样由“.pro”文件生成：
+
+    qmake -oMakefile hello.pro
+
+对于VisualStudio的用户，qmake也可以生成“.dsp”文件，例如：
+
+    qmake -tvcapp -o hello.dsp hello.pro

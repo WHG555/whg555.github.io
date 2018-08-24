@@ -1,23 +1,123 @@
 # Site settings
 title: 炫动空间
-description: "随心,随意"
-email: whghcyx@outlook.com
-author: 宏沉一笑
 SEOTitle: 心动
 header-img: img/home-bg.jpg
+email: whghcyx@outlook.com
+description: "学习 学会  学懂"
+keyword: "嵌入式"
+url: "https://whg555.github.io/hcyx/"              # your host, for absolute URL
+baseurl: "/hcyx"                             # for example, '/blog' if your blog hosted on 'host/blog'
 
-# 网站的根路径
 
-url:         https://whg555.github.io/first/
-#baseurl:     F:\whg\huxpro.github.io
-# 改变 Jekyll 读取文件的目录
-source:  .
 
-# Markdown settings
-markdown: kramdown
-kramdown:
-  input: GFM
-  
+# SNS settings
+RSS: false
+weibo_username:    2046846483
+zhihu_username:    hong-chen-yi-xiao-26
+github_username:    WHG555
+twitter_username:   宏沉一笑
+#facebook_username:  宏沉一笑
+# linkedin_username:  firstname-lastname-idxxxx
+
+
+
+# Build settings
+# from 2016, 'pygments' is unsupported on GitHub Pages. Use 'rouge' for highlighting instead.
+highlighter: rouge
+permalink: pretty
+paginate: 10
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md","README.zh.md"]
+anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
+
+
+
 # Gems
 # from PR#40, to support local preview for Jekyll 3.0
 gems: [jekyll-paginate]
+
+
+
+# Markdown settings
+# replace redcarpet to kramdown,
+# although redcarpet can auto highlight code, the lack of header-id make the catalog impossible, so I switch to kramdown
+# document: http://jekyllrb.com/docs/configuration/#kramdown
+markdown: kramdown
+kramdown:
+  input: GFM                            # use Github Flavored Markdown !important
+
+
+
+# Disqus settings
+disqus_username: hux
+
+# Netease setttings
+netease_comment: false
+
+
+
+# Analytics settings
+# Baidu Analytics 
+# ba_track_id: [your track id]
+
+# Google Analytics
+ga_track_id: 'UA-49627206-1'            # Format: UA-xxxxxx-xx
+ga_domain: 宏沉一笑
+
+
+
+# Sidebar settings
+sidebar: true                           # whether or not using Sidebar.
+sidebar-about-description: "学习的过程"
+sidebar-avatar: https://whg555.github.io/hcyx/img/avatar-hux.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+
+
+
+# Featured Tags
+featured-tags: true                     # whether or not using Feature-Tags
+featured-condition-size: 1              # A tag will be featured if the size of it is more than this condition value
+
+
+
+# Progressive Web Apps
+chrome-tab-theme-color: "#000000"
+service-worker: true
+
+
+
+# Friends
+friends: [
+    {
+    #     title: "Su",
+    #     href: "http://su.gallery/"
+    # },{
+        title: "乱序",
+        href: "http://mida.re/"
+    },{
+        title: "前端外刊评论",
+        href: "http://qianduan.guru/"
+    },{
+        title: "天镶的博客",
+        href: "http://lingyu.wang/"
+    },{
+        title: "Luke 的自留地",
+        href: "http://hmqk1995.github.io"
+    },{
+        title: "Ebn's Blog",
+        href: "http://ebnbin.com/"
+    },{
+        title: "SmdCn's Blog",
+        href: "http://blog.smdcn.net"
+    },{
+        title: "David's Game",
+        href: "https://www.ruoyaowu.com/"
+    },{
+        title: "DHong Say",
+        href: "http://dhong.co"
+    },{
+        title: "尹峰以为",
+        href: "http://ingf.github.io/"
+    },{
+        title: "解旻的博客",
+        href: "http://xieminis.me/"
+    }
+]

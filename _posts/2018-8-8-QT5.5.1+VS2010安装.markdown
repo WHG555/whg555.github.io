@@ -1,0 +1,28 @@
+---
+layout: post  
+title: QT5.5.1+VS2010安装  
+date: 2018-8-8 22:02:12  
+group:   
+tags: QT  
+---
+## 下载地址 ##
+qt-vs-addin-1.2.4-opensource.exe:[https://mirrors.tuna.tsinghua.edu.cn/qt/official_releases/vsaddin/qt-vs-addin-1.2.4-opensource.exe](https://mirrors.tuna.tsinghua.edu.cn/qt/official_releases/vsaddin/qt-vs-addin-1.2.4-opensource.exe "qt-vs-addin-1.2.4-opensource.exe")  
+qt5.5.1版本[https://mirrors.tuna.tsinghua.edu.cn/qt/archive/qt/5.5/5.5.1/qt-opensource-windows-x86-msvc2010-5.5.1.exe](https://mirrors.tuna.tsinghua.edu.cn/qt/archive/qt/5.5/5.5.1/qt-opensource-windows-x86-msvc2010-5.5.1.exe "qt-opensource-windows-x86-msvc2010-5.5.1.exe")
+vs2010[ed2k://|file|cn_visual_studio_2010_ultimate_x86_dvd_532347.iso|2685982720|4AE6228933DDE49D9BFA4C3467C831C2|/]("Visual Studio 2010 Ultimate (x86) - DVD (Chinese-Simplified)")  
+VS2010[Visual Studio 2010 Ultimate (x86) - DVD (Chinese-Simplified)](Visual Studio 2010 Ultimate (x86) - DVD (Chinese-Simplified) "ed2k://|file|cn_visual_studio_2010_ultimate_x86_dvd_532347.iso|2685982720|4AE6228933DDE49D9BFA4C3467C831C2|/")
+## 安装软件 ##
+先装vs2010和qt5.5.1，最后再装qt-vs-addin-1.2.4-opensource.exe  
+## 配置环境变量 ##
+添加QT应用所在的位置  
+![](https://i.imgur.com/EqQUm1O.png)
+## 配置VS中的QT ##
+打开vs2010  
+![](https://i.imgur.com/V8XRM4l.png)
+选择QT5，QT Options  
+![](https://i.imgur.com/39rybTt.png)
+添加QT5.5.1的路径，以及vs版本  
+![](https://i.imgur.com/7AVTfyx.png)
+至此，配置完成。  
+## 使用 ##
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;打开一个创建过的工程，就可以编辑了。  
+看看这个

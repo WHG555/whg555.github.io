@@ -1,0 +1,17 @@
+---
+layout: post  
+title: 删除目录下的.svn文件夹  
+date: 2018-5-20 20:18:37  
+group:   
+tags: DOS  
+---
+新建一个文本文档，改名为kill-svn.dat  
+插入内容  
+
+	echo on 
+	rem 删除SVN版本控制目录
+	for /r . %%a in (.) do @if exist "%%a\.svn" rd /s /q "%%a\.svn"
+	echo completed
+	pause  
+
+放到要删除的目录下，点击运行就可以。
