@@ -1,0 +1,17 @@
+---
+layout: post  
+title: 手机软件库  
+date: 2018-8-12 22:35:15  
+group:   
+tags: 软件 手机 
+---
+# 软件 #  
+**名字:** Termux 
+**功能:** 在手机上使用ssh来使用一些linux功能
+**地址:** 链接：https://pan.baidu.com/s/1s735yxA1-DXhqJxdMc1NPg 密码：i9ij    
+**说明:** [http://www.sqlsec.com/2018/05/termux.html](http://www.sqlsec.com/2018/05/termux.html "http://www.sqlsec.com/2018/05/termux.html")  
+
+**名字:**  
+**功能:**  
+**地址:**  
+**说明:**  

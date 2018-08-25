@@ -1,0 +1,60 @@
+---
+layout: post  
+title: Git安装教程  
+date: 2018-8-24 23:4:56  
+group:   
+tags: 安装教程  
+---
+# 软件下载 #  
+### 64位系统所需软件 ###
+Git-64位软件  [https://github.com/git-for-windows/git/releases/download/v2.18.0.windows.1/Git-2.18.0-64-bit.exe](https://github.com/git-for-windows/git/releases/download/v2.18.0.windows.1/Git-2.18.0-64-bit.exe "https://github.com/git-for-windows/git/releases/download/v2.18.0.windows.1/Git-2.18.0-64-bit.exe")  
+TortoiseGit-64位软件  [https://download.tortoisegit.org/tgit/2.7.0.0/TortoiseGit-2.7.0.0-64bit.msi](https://download.tortoisegit.org/tgit/2.7.0.0/TortoiseGit-2.7.0.0-64bit.msi "https://download.tortoisegit.org/tgit/2.7.0.0/TortoiseGit-2.7.0.0-64bit.msi")  
+TortoiseGit-64位汉语支持包  [https://download.tortoisegit.org/tgit/2.7.0.0/TortoiseGit-LanguagePack-2.7.0.0-64bit-zh_CN.msi](https://download.tortoisegit.org/tgit/2.7.0.0/TortoiseGit-LanguagePack-2.7.0.0-64bit-zh_CN.msi "https://download.tortoisegit.org/tgit/2.7.0.0/TortoiseGit-LanguagePack-2.7.0.0-64bit-zh_CN.msi")
+
+### 32位系统所需软件 ###
+Git-32位软件  [https://github.com/git-for-windows/git/releases/download/v2.18.0.windows.1/Git-2.18.0-32-bit.exe](https://github.com/git-for-windows/git/releases/download/v2.18.0.windows.1/Git-2.18.0-32-bit.exe "https://github.com/git-for-windows/git/releases/download/v2.18.0.windows.1/Git-2.18.0-32-bit.exe")
+TortoiseGit-32位软件  [https://download.tortoisegit.org/tgit/2.7.0.0/TortoiseGit-2.7.0.0-32bit.msi](https://download.tortoisegit.org/tgit/2.7.0.0/TortoiseGit-2.7.0.0-32bit.msi "https://download.tortoisegit.org/tgit/2.7.0.0/TortoiseGit-2.7.0.0-32bit.msi")  
+TortoiseGit-32位汉语支持包   [https://download.tortoisegit.org/tgit/2.7.0.0/TortoiseGit-LanguagePack-2.7.0.0-32bit-zh_CN.msi](https://download.tortoisegit.org/tgit/2.7.0.0/TortoiseGit-LanguagePack-2.7.0.0-32bit-zh_CN.msi "https://download.tortoisegit.org/tgit/2.7.0.0/TortoiseGit-LanguagePack-2.7.0.0-32bit-zh_CN.msi")  
+## 以上的路径下载有点慢，可以使用下面的路径 ##  
+以上6个软件在百度云网盘内都有  
+链接：https://pan.baidu.com/s/1YQTxh1-cd8jN18u7YlRR5Q 密码：co1i
+# 安装 #  
+按照图中的顺序，进行安装。
+![](https://i.imgur.com/1rgm4Ug.png)
+1.先安装 Git， 一路确定就好
+2.再安装 TortoiseGit ,一路确定
+3.最后安装TortoiGit的中文支持包，一路确定  
+# 配置 #  
+ 1.  设置软件语言，设置完后需要重启软件。
+![](https://i.imgur.com/OkKdnuc.png)
+ 2.  设置用户
+- 重启后点击这里
+![](https://i.imgur.com/4Nfn3Og.png)
+- 点击下一步
+![](https://i.imgur.com/sJkmyeL.png)
+- 选择git的应用程序的路径，
+![](https://i.imgur.com/B6EI7ul.png)
+- 输入用户名和邮箱。
+![](https://i.imgur.com/VaCjgcO.png)
+- 点击生成putty的密钥，来连接git
+![](https://i.imgur.com/rLyALmQ.png)
+- 应用不一定能够点出来，点击下面的那个图标，使它到最前面来。
+![](https://i.imgur.com/e7nRtFf.png)
+- 点击Generate，生成putty的密钥。
+![](https://i.imgur.com/hLAx59l.png)
+- 进度条出来后，在方框内用鼠标随机点击，直至进度条完成，生成密钥。
+![](https://i.imgur.com/FY67Am6.png)
+- 点击图片中标识的部分，保存密钥到一个自定的目录，可以放到软件的目录内。
+![](https://i.imgur.com/9Kaq4ON.png)
+- 点击完成
+![](https://i.imgur.com/zWRrWhq.png)
+- 点击应用，确定
+![](https://i.imgur.com/iKXnAD0.png)
+- 上面的部分只是生成了密钥，但还没放到应用内。现在点击开始目录内的TortoiseGit的Pageant
+![](https://i.imgur.com/NheUXK8.png)
+- 点击Add Key，添加上面保存的密钥。
+![](https://i.imgur.com/FuZdB2L.png)
+- 选择保存的密钥
+![](https://i.imgur.com/YZ3tasj.png)
+- 点击close
+![](https://i.imgur.com/g3A1ngi.png)
