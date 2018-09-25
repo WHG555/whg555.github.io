@@ -26,9 +26,23 @@ tags: 软件
 **地址:**链接：[https://pan.baidu.com/s/1_bRX5DGFhpSUZzp-dYDMIw](https://pan.baidu.com/s/1_bRX5DGFhpSUZzp-dYDMIw) 密码：8jxq  
 **说明:**  
 
+**名字:**QIconChanger  
+**功能:**改变exe应用程序的图标  
+**地址:**  
+**说明:**  
+ 
+**名字:**mofangtbds  
+**功能:**提取exe应用程序的图标  
+**地址:**  
+**说明:**  
+
 **名字:**  
 **功能:**  
 **地址:**  
 **说明:**  
- 
+
+**名字:**  
+**功能:**  
+**地址:**  
+**说明:**  
 

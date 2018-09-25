@@ -1,0 +1,18 @@
+---
+layout: post  
+title: clover设置  
+date: 2018-9-25 10:3:37  
+group:   
+tags:   
+---
+## 说明 ##
+有时候，clover不会开机启动，必须要自己点击一下才能启动，就需要设置一下。  
+以下是设置方法：
+
+## 步骤1 ##
+* 打开ie浏览器，选择工具选项。点击**管理加载项**
+![](https://i.imgur.com/gq1qaOS.png)
+
+选择**ExplorerWatcher Class**，将它启用，点击确定即可。
+![](https://i.imgur.com/gO9xNTT.png)
+

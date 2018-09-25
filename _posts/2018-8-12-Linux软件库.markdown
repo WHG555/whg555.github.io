@@ -11,7 +11,7 @@ tags: 软件 Linux
 **地址:**[http://diannaobos.com/frp/](http://diannaobos.com/frp/ "http://diannaobos.com/frp/")    
 **说明:**  
 
-**名字:**  
-**功能:**  
+**名字:**nmtui  
+**功能:**图形化的网络工具  
 **地址:**  
 **说明:**  
