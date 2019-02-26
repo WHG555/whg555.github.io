@@ -1,0 +1,77 @@
+---
+layout: post  
+title: QT4安装  
+date: 2018-12-28 10:3:47  
+group:   
+tags: QT  
+---  
+---  
+##  ##
+**所需软件包：**  
+1.qt-opensource-windows-x86-mingw482-4.8.6-1.exe（qt库文件）  
+
+2.qt-creator-opensource-windows-x86-4.2.0.exe（IDE）  
+
+3.i686-4.8.2-release-posix-dwarf-rt_v3-rev3.7z（wingw编译器，非常重要，安装成功与否靠它了）  
+	[https://sourceforge.net/projects/mingw-w64/](https://sourceforge.net/projects/mingw-w64/ "https://sourceforge.net/projects/mingw-w64/")  
+4.qtcreator-gdb-7.4-MINGW32_NT-6.1-i686.tar.gz（gdb调试器）  
+[http://download.qt.io/development_releases/prebuilt/gdb/windows-7/](https://sourceforge.net/projects/mingw-w64/ "https://sourceforge.net/projects/mingw-w64/")
+
+**安装说明：**  
+步骤一：
+
+先把所有的压缩包解压出来，然后把（一定要是对应的版本，见说明1）i686-4.8.2-release-posix-dwarf-rt_v3-rev3.7z解压出来的mingw32文件夹剪切到C盘中。gdb文件夹同理。注意：一定要记得mingw32文件夹和gdb文件夹解压到了哪里，因为后续安装需要指定此文件夹位置！（我解压到C：\Qt）
+
+
+clip_image002[9]
+步骤二：
+
+（1）点击qt-opensource-windows-x86-mingw482-4.8.6-1.exe进行安装，这是一个类库来的，下面就等一下吧！
+
+（2）load完之后一直按next就行了。最后来到某个界面，你直接按install就行了，接着就是漫长的等待，中间会有一个选择编译器的界面，选择我们刚刚解压出来的mingw32文件夹，千万不要选错。注意：这个Qt所有的东西都要安装在C盘，不要随意更改路径，占你2G而已，否则的话可能安装不成功的，本人没有实验过，如果你有兴趣可以试一下。
+
+
+clip_image005[6]
+（3）吃了个苹果，刚刚装好。先不要打开它，把那两个选项去掉它，然后按一下finish,因为下面还有一些事情要做。
+
+
+clip_image007[6]
+步骤三：
+
+（1）点击qt-creator-opensource-windows-x86-4.2.0.exe把creator安装了，其实这只是一个开发环境而已，简单来说就是一个编写代码的地方，就像visual C++ 6.0一样。其实不用这个环境，用VS也可以的，大家有兴趣可以尝试一下。
+
+
+clip_image009[7]
+（2）还是那句话，直接按next,出现登陆账户就skip就行，都保持默认即可，在最后的界面，不要把勾去掉，按finish，然后creator就启动了。
+
+
+clip_image011[6]
+步骤四：
+
+（1）现在还不能用的，要设置一下环境变量。首先依次点击工具和选项，然后就跟着图片的编号去做
+
+clip_image013[6]
+（2）按了添加之后就会弹出一个对话框来，是用来选择qmake途径的，我们可以依次选择C盘，Qt，4.8.6，bin, qmake.exe就行了。不会选择的话可以看一下图片红线处的路径。（这种选法只能在你没有更改路径的情况下用）
+
+clip_image015[6]
+(3)配置编译器，操作：编译器->添加->MinGw->C++。
+
+
+clip_image017[6]
+（4）按完MinGW后，在编译器路径那里选择路径:C:\Qt\mingw32\bin\g++.exe，然后点击打开就行了.同理可以配置C编译器，只是g++.exe换成了gcc.exe（见说明2）。
+
+
+clip_image019[5]
+（5）最后到“构件套件(Kit)”中，可以看到已经有一个“桌面(默认)”，这里双击它直接进行设置，名称可以随意设置；下面编译器一项选择前面设置的MinGW；最后Qt版本选择前面添加的即可，因为调试器还没有配置，所以调试器一项再配置了之后就可以选择了。为了以后调试模式进行程序调试，这里需要指定调试器。然后回到Qt Creator中继续设置，单击调试器项（Debugger）项“添加”，路经为C:\Qt\qtcreator-gdb-7.4-MINGW32_NT-6.1-i686\gdb-i686-pc-mingw32.exe
+
+
+clip_image021[5]
+到此，Qt4.8.6基本配置完毕！
+
+**激活：**  
+
+
+**问题：**  
+
+
+**下载：**  

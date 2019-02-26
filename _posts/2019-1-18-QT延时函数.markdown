@@ -1,0 +1,41 @@
+---
+layout: post  
+title: QT延时函数  
+date: 2019-1-18 17:42:49  
+group:   
+tags: QT  
+---
+---
+一、关于Qt实现非阻塞延时的方法：
+
+void QSleepTimeSet::Delay_MSec(unsigned int msec)
+{
+    QTime _Timer = QTime::currentTime().addMSecs(msec);
+
+    while( QTime::currentTime() < _Timer )
+
+    QCoreApplication::processEvents(QEventLoop::AllEvents, 100);
+}
+
+其中的msec为需要延时的毫秒数，例如，你要实现5秒延时，则msec的值就是 ：5000
+
+ 
+
+ 二、关于Qt中的阻塞延时实现方法：
+
+void QSleepTimeSet::Delay_MSec_Suspend(unsigned int msec)
+{
+
+    QTime _Timer = QTime::currentTime();
+
+    QTime _NowTimer;
+    do{
+              _NowTimer=QTime::currentTime();
+    }while (_Timer.msecsTo(_NowTimer)<=msec);
+
+}
+--------------------- 
+作者：FireMan0412 
+来源：CSDN 
+原文：https://blog.csdn.net/yanche521/article/details/50977301 
+版权声明：本文为博主原创文章，转载请附上博文链接！
