@@ -6,7 +6,7 @@ email: whghcyx@outlook.com
 description: "学习 学会  学懂"
 keyword: "嵌入式"
 url: "https://whg555.github.io/"              # your host, for absolute URL
-baseurl: "/hcyx"                             # for example, '/blog' if your blog hosted on 'host/blog'
+baseurl: "/"                             # for example, '/blog' if your blog hosted on 'host/blog'
 
 
 
