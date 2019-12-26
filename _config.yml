@@ -105,4 +105,8 @@ theme: hexo-theme-pure
 deploy:
   type: git
   repository: git@gitee.com:whghcyx/whghcyx.git
+  repo: 
+       github: git@github.com:WHG555/whg555.github.io.git
+       # coding: git@git.coding.net:AshinWang/AshinWang.coding.me.git
+       gitee: git@gitee.com:whghcyx/whghcyx.git
   branch: master
