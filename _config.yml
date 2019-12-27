@@ -94,11 +94,11 @@ ignore:
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 ## theme: landscape
-theme: hexo-theme-pure
-## theme: hexo-theme-concise
-## theme: hexo-theme-jsimple
-## theme: hexo-theme-tomotoes
+theme: hexo-theme-3-hexo
 ## theme: hexo-theme-pure
+## theme: hexo-theme-jsimple
+## theme: hexo-theme-next
+
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
