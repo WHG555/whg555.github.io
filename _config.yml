@@ -110,3 +110,8 @@ deploy:
        # coding: git@git.coding.net:AshinWang/AshinWang.coding.me.git
        gitee: git@gitee.com:whghcyx/whghcyx.git
   branch: master
+
+search:
+  path: search.xml
+  field: post
+
