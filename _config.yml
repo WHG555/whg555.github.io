@@ -3,12 +3,12 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle: ''
-description: ''
+title: 炫动空间
+subtitle: 'xdkj'
+description: '一些学习的记录'
 keywords:
-author: John Doe
-language: en
+author: 宏沉一笑
+language: zh-CN
 timezone: ''
 
 # URL
@@ -94,10 +94,10 @@ ignore:
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 ## theme: landscape
-theme: hexo-theme-3-hexo
+theme: hexo-theme-3-hexo  # 我
 ## theme: hexo-theme-pure
 ## theme: hexo-theme-jsimple
-## theme: hexo-theme-next
+## theme: hexo-theme-next  # 丹
 
 
 # Deployment
