@@ -2,9 +2,12 @@
 title: hexo
 date: 2019-12-30 15:10:18
 tags:
+
+categories:
+
 ---
 
-&[toc]
+
 
 # 软件安装 #
 - Node.js   
@@ -16,6 +19,19 @@ tags:
 npm install -g hexo-cli
 
 # 软件配置 #
+- 前头
+
+参数|	描述|	默认值
+:-|:-|:-
+layout	|布局	
+title	|标题	文章的文件名
+date	|建立日期	文件建立日期
+updated	|更新日期	文件更新日期
+comments	|开启文章的评论功能	|true
+tags	|标签（不适用于分页）	
+categories	|分类（不适用于分页）	
+permalink	|覆盖文章网址	
+keywords	|仅用于 meta 标签和 Open Graph 的关键词（不推荐使用）	
 
 # 软件使用 #
 
@@ -26,6 +42,19 @@ hexo init hexo
 cd hexo
 hexo g
 hexo server
+## 前头 ##
+```
+categories:
+- Diary
+tags:
+- PS3
+- Games
+
+categories:
+- [Diary, PlayStation]
+- [Diary, Games]
+- [Life]
+```
 
 # 文章编译 #
 1.添加草稿
