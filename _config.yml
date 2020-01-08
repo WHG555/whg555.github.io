@@ -59,7 +59,7 @@ use_date_for_updated: false
 
 # Writing
 # 新文章的名称
-new_post_name: :year-:month-:day-title.md # File name of new posts
+new_post_name: :year-:month-:day-:title.md # File name of new posts
 # 预设布局
 default_layout: post
 # 在中文和英文之间加入空格
