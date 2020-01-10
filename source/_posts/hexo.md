@@ -57,13 +57,38 @@ categories:
 - [Life]
 ```
 
+文章不被处理
+
+```
+---
+layout: false  # 更改这里
+title: OpenCV编译  
+date: 2019-10-8 
+tags: 
+- Opencv 编译
+categories:
+- []
+---
+```
+
 # 文章编译 #
 1.添加草稿
 hexo new draft demo
 2.发布文章
 hexo publish post demo
 
+# 引用 #
+{% codeblock %}
+code snippet
+{% endcodeblock %}
 
+{% codeblock lang:objc %}
+[rectangle setX: 10 y: 10 width: 20 height: 20];
+{% endcodeblock %}
+
+{% blockquote Seth Godin http://sethgodin.typepad.com/seths_blog/2009/07/welcome-to-island-marketing.html Welcome to Island Marketing %}
+Every interaction is both precious and an opportunity to delight.
+{% endblockquote %}
 
 # 帮助文档  #
 [https://hexo.io/zh-cn/docs/](https://hexo.io/zh-cn/docs/)
