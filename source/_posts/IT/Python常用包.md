@@ -1,16 +1,18 @@
- ---
-title: Git使用
+---
+title: Python常用包
 date: 2019-12-30 16:49:44
 tags: 
 - demo
 categories:
-- []
-- [配置]
+- [demo, demo]
+- [demo]
 ---
-# 常用模式 #
-## 代码下载 ##
-git clone git@github.com:whg555/codebase.git
-
+# Python常用包 #
+包名 | 功能 
+:-|:-
+os | 系统功能包
+sys | 调用系统操作
+skimage | 图像操作
 
 
 
@@ -44,4 +46,5 @@ git clone git@github.com:whg555/codebase.git
 **签名：Smile every day**    
 **名字：宏沉一笑**   
 **邮箱：whghcyx@outlook.com**  
+**个人网站：https://whg555.github.io**  
 ---
