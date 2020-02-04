@@ -1,15 +1,36 @@
 ---
-title: demo
-date: 2019-12-30 16:49:44
+title: mmdetection安装
+date: 2020-2-4 11:53:7
 tags: 
 - demo
 categories:
-- [demo, demo]
-- [demo]
+- [AI,框架]
 ---
-# demo #
+# mmdetection安装 #
+```
+# 环境安装 
+conda create -n mmdetection python=3.7 -y
+conda activate mmdetection
+# pytorch安装 
+conda install pytorch==1.2.0 torchvision==0.4.0 cudatoolkit=10.0 -c pytorch
+# mmcv安装
+git clone https://github.com/open-mmlab/mmcv
+cd mmcv
+pip install .
+# pycoco安装
+pip install "git+https://github.com/philferriere/cocoapi.git#egg=pycocotools&subdirectory=PythonAPI"
+# Cython安装
+pip install Cython==0.29.14
+# mmdetection安装
+git clone https://github.com/open-mmlab/mmdetection.git
+cd mmdetection
+pip install -r requirements.txt
+python setup.py develop
+```
+- 检查
+>pip list
 
-
+包名 mmdet                     1.0+4ec5b80               dev_0    <develop>
 
 
 
