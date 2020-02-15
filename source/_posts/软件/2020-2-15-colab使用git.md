@@ -1,25 +1,32 @@
 ---
-title: cmd命令学习
-date: 2020-1-10
+title: colab使用git
+date: 2020-2-15 16:26:52
 tags: 
-- cmd
+- demo
 categories:
-- [软件, window]
+- [demo, demo]
+- [软件]
 ---
-# 常用命令 #
-- dir
-查看目录内文件
+# colab使用git #
+## 配置用户与密码 ##
+```
+!git config --global user.name whghcyx
+!git config --global user.email whghcyx@outlook.com
+```
+## 下载代码 ##
+```
+!git clone https://gitee.com/whghcyx/Pytorch-RetinaNet.git
+```
 
-- cd
-切换到一个新的目录
+## 上传代码 ##
+```
+!git remote set-url origin git@github.com:whghcyx/Pytorch-RetinaNet.git
+!git add . --all
+!git commit -m "test colab222768"
+# 注意 passwd 的位置为自己的密码
+!git push https://whghcyx:passwd@gitee.com/whghcyx/Pytorch-RetinaNet.git --all
+```
 
-# 常用功能 #
-- CMD 在资源管理器中打开当前路径
-explorer  %cd%
-
-- 创建硬连接
-mklink /J D:\data\link E:\AI\COCO2017
-其中COCO2017为实际的目录， link为符号连接的目录
 
 
 ---
@@ -50,4 +57,5 @@ mklink /J D:\data\link E:\AI\COCO2017
 **签名：Smile every day**    
 **名字：宏沉一笑**   
 **邮箱：whghcyx@outlook.com**  
+**个人网站：https://whg555.github.io**  
 ---
