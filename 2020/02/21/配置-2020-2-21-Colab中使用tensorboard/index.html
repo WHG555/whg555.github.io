@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>知识 | 炫动空间</title>
-  <meta name="keywords" content=" demo ">
-  <meta name="description" content="知识 | 炫动空间">
+  <title>Colab中使用tensorboard | 炫动空间</title>
+  <meta name="keywords" content=" Colab , tensorboard ">
+  <meta name="description" content="Colab中使用tensorboard | 炫动空间">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="页面未找到！生活不总是那么完美，那一个缺憾已经出现！！！">
 <meta property="og:type" content="website">
@@ -587,9 +587,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-知识-2020-1-8-知识" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-配置-2020-2-21-Colab中使用tensorboard" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">知识</h1>
+        <h1 class="article-title">Colab中使用tensorboard</h1>
     
     <div class="article-meta">
         
@@ -597,26 +597,28 @@
         
         <span class="book">
             
-                <a  data-rel="知识">知识</a>
+                <a  data-rel="配置">配置</a>
             
         </span>
         
         
         <span class="tag">
             
-            <a class="color5">demo</a>
+            <a class="color1">Colab</a>
+            
+            <a class="color2">tensorboard</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2020-02-04 11:47:46'>2020-01-08 11:07</time>
+        创建时间:<time class="date" title='更新时间: 2020-02-21 12:00:49'>2020-02-21 11:50</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:27</span>
+        <span>字数:177</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -635,7 +637,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#灵感"><span class="toc-text">灵感</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#配置"><span class="toc-text">配置</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#挂载google硬盘"><span class="toc-text">挂载google硬盘</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -651,9 +653,45 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="灵感"><a href="#灵感" class="headerlink" title="灵感"></a>灵感</h1><p>找寻一个东西的方法</p>
+        <h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><ul>
+<li>文件下载<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">!wget https:&#x2F;&#x2F;bin.equinox.io&#x2F;c&#x2F;4VmDzA7iaHb&#x2F;ngrok-stable-linux-amd64.zip</span><br><span class="line">!unzip ngrok-stable-linux-amd64.zip</span><br></pre></td></tr></table></figure></li>
+<li>进行配置<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 设置log目录</span><br><span class="line">LOG_DIR &#x3D; &#39;&#x2F;content&#x2F;drive&#x2F;log&#39;</span><br><span class="line">get_ipython().system_raw(&#39;tensorboard --logdir &#123;&#125; --host 0.0.0.0 --port 6006 &amp;&#39;.format(LOG_DIR))</span><br></pre></td></tr></table></figure></li>
+<li>开启ngrok</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#开启ngrok service，绑定port 6006(tensorboard)</span><br><span class="line">get_ipython().system_raw(&#39;.&#x2F;ngrok http 6006 &amp;&#39;)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>启动服务<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">! curl -s http:&#x2F;&#x2F;localhost:4040&#x2F;api&#x2F;tunnels | python3 -c \</span><br><span class="line">&quot;import sys, json; print(json.load(sys.stdin)[&#39;tunnels&#39;][0][&#39;public_url&#39;])&quot;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h1 id="挂载google硬盘"><a href="#挂载google硬盘" class="headerlink" title="挂载google硬盘"></a>挂载google硬盘</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">from google.colab import drive</span><br><span class="line">drive.mount(&#39;&#x2F;content&#x2F;drive&#39;)</span><br></pre></td></tr></table></figure>
+
 <hr>
-<p><strong>签名：Smile every day</strong><br><strong>名字：宏沉一笑</strong><br><strong>邮箱：<a href="mailto:whghcyx@outlook.com">whghcyx@outlook.com</a></strong>  </p>
+<center>
+<table>
+    <tr>
+        <td >
+            <center>
+                <img src="https://i.loli.net/2020/01/08/CJz85Sbal6M7EOV.png" width="200"/>
+            </center>
+            <center style="font-weight:900">
+                微信：宏沉一笑
+            </center>
+        </td>
+        <td >
+            <center>
+                <img src="https://i.loli.net/2020/01/08/veq2DSphHME9KPV.jpg" width="200"/>
+            </center>
+            <center style="font-weight:900">
+                公众号：漫步之行
+            </center>
+        </td>
+    </tr>
+</table>
+</center>
+
+
+<p><strong>签名：Smile every day</strong><br><strong>名字：宏沉一笑</strong><br><strong>邮箱：<a href="mailto:whghcyx@outlook.com">whghcyx@outlook.com</a></strong><br><strong>个人网站：<a href="https://whg555.github.io" target="_blank" rel="noopener">https://whg555.github.io</a></strong>  </p>
 <hr>
 
       
@@ -668,12 +706,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>知识</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">27</span></p>
+    <p><span class="copy-title">文章标题:</span>Colab中使用tensorboard</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">177</span></p>
     <p><span class="copy-title">本文作者:</span><a  title="宏沉一笑">宏沉一笑</a></p>
-    <p><span class="copy-title">发布时间:</span>2020-01-08, 11:07:28</p>
-    <p><span class="copy-title">最后更新:</span>2020-02-04, 11:47:46</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/01/08/%E7%9F%A5%E8%AF%86-2020-1-8-%E7%9F%A5%E8%AF%86/" title="知识">https://whghcyx.gitee.io/2020/01/08/%E7%9F%A5%E8%AF%86-2020-1-8-%E7%9F%A5%E8%AF%86/</a>
+    <p><span class="copy-title">发布时间:</span>2020-02-21, 11:50:45</p>
+    <p><span class="copy-title">最后更新:</span>2020-02-21, 12:00:49</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/02/21/%E9%85%8D%E7%BD%AE-2020-2-21-Colab%E4%B8%AD%E4%BD%BF%E7%94%A8tensorboard/" title="Colab中使用tensorboard">https://whghcyx.gitee.io/2020/02/21/%E9%85%8D%E7%BD%AE-2020-2-21-Colab%E4%B8%AD%E4%BD%BF%E7%94%A8tensorboard/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
