@@ -5,7 +5,7 @@ tags:
 - 软件
 - 配置
 categories:
-- 软件
+- [安装]
 ---
 # Github与Gitee共存 #
 
