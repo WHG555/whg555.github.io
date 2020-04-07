@@ -1,17 +1,36 @@
 ---
-title: conda使用
-date: 2020-3-20 11:44:7
+title: xml.etree.ElementTree
+date: 2020-4-2 18:4:4
 tags: 
+- demo
 categories:
-- [使用]
+- [IT, python]
 ---
-# 快捷方式配置 #
-复制原来的快捷方式，将路径 更改为下面的，就可使用powershell。
-```
-%windir%\System32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy ByPass -NoExit -Command "& 'E:\soft\anaconda\shell\condabin\conda-hook.ps1' ; conda activate 'E:\soft\anaconda' "
-```
+# 库说明 #
+操作xml的库
 
-
+# 代码操作 #
+## 库导入 ##
+```
+import xml.etree.ElementTree as ET
+```
+# 示例xml #
+```
+<annotation>
+	<folder>train</folder>
+	<filename>1001.jpg</filename>
+	<object>
+		<name>face_mask</name>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>175</xmin>
+			<ymin>29</ymin>
+			<xmax>393</xmax>
+			<ymax>300</ymax>
+		</bndbox>
+	</object>
+</annotation>
+```
 
 
 

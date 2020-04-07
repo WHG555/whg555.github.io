@@ -1,17 +1,19 @@
 ---
-title: conda使用
-date: 2020-3-20 11:44:7
+title: no module named 'past'
+date: 2020-3-27
 tags: 
+- python
 categories:
-- [使用]
+- [问题]
 ---
-# 快捷方式配置 #
-复制原来的快捷方式，将路径 更改为下面的，就可使用powershell。
-```
-%windir%\System32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy ByPass -NoExit -Command "& 'E:\soft\anaconda\shell\condabin\conda-hook.ps1' ; conda activate 'E:\soft\anaconda' "
-```
+# 问题 #
+python中运行程序出现  
+>ModuleNotFoundError: No module named 'past'
 
-
+# 解决 #
+```
+pip install future
+```
 
 
 

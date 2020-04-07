@@ -1,17 +1,27 @@
 ---
-title: conda使用
-date: 2020-3-20 11:44:7
+title: Beyond_Compare
+date: 2020-4-1 14:33:13
 tags: 
+- demo
 categories:
-- [使用]
+- [安装]
 ---
-# 快捷方式配置 #
-复制原来的快捷方式，将路径 更改为下面的，就可使用powershell。
-```
-%windir%\System32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy ByPass -NoExit -Command "& 'E:\soft\anaconda\shell\condabin\conda-hook.ps1' ; conda activate 'E:\soft\anaconda' "
-```
+# 介绍 #
+
+# 软件下载 #
+## 官网地址 ##
+
+## 百度云 ##
+
+# 软件安装 #
+## Window安装 ##
+点开安装包，一路默认安装，不过要把路径改到非C盘。  
+安装完后，把**BCUnrar.dll**删除
+![QQ截图20200401143705.png](https://i.loli.net/2020/04/01/R8z3BoxZ6XSuEeQ.png)
 
 
+## 软件破解 ##
+将目录下的**BCUnrar.dll**删除
 
 
 
