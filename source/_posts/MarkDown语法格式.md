@@ -80,6 +80,7 @@ n个...
 ***
 *****
 ## 5.图片 ##
+### 插入网络图片 ###
 ```
 ![图片alt](图片地址 ''图片title'')
 
@@ -90,7 +91,31 @@ n个...
 ![showphoto](https://i.imgur.com/0YC6z5l.png "look me")
 ```
 效果如下：
-![showphoto](https://i.imgur.com/0YC6z5l.png "look me")
+![showphoto](https://i.imgur.com/0YC6z5l.png "look me")   
+
+将图片存在网络服务器上，非常依赖网络与图库
+
+### 插入本地图片 ###
+只需要在基础语法的括号中填入图片的位置路径即可，支持绝对路径和相对路径。
+例如：
+```
+![avatar](/home/picture/1.png)
+```
+不灵活不好分享，本地图片的路径更改或丢失都会造成markdown文件调不出图。
+
+
+### 把图片存入markdown文件 ###
+用base64转码工具把图片转成一段字符串，然后把字符串填到基础格式中链接的那个位置。
+
+```
+基础用法：
+![avatar](data:image/png;base64,iVBORw0......)
+这个时候会发现插入的这一长串字符串会把整个文章分割开，非常影响编写文章时的体验。如果能够把大段的base64字符串放在文章末尾，然后在文章中通过一个id来调用，文章就不会被分割的这么乱了。
+高级用法
+比如：
+![avatar][base64str]
+[base64str]:data:image/png;base64,iVBORw0......
+```
 
 ## 6.超链接 ##
 ```
