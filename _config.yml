@@ -119,6 +119,7 @@ exclude:
 ignore:
 
 # Extensions
+# 选用主题的名字
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 ## theme: landscape
@@ -132,6 +133,7 @@ theme_config:   # 主题配置
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
+# 网站上传的位置
 deploy:
   type: git
   repository: git@gitee.com:whghcyx/whghcyx.git
