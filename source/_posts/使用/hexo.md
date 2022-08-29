@@ -1,5 +1,5 @@
 ---
-title: hexo
+title: hexo安装与使用教程
 date: 2019-12-30 15:10:18
 tags:
 
@@ -19,7 +19,6 @@ categories:
 npm install -g hexo-cli
 
 # 软件配置 #
-- 前头
 
 参数|	描述|	默认值
 :-|:-|:-
@@ -44,7 +43,7 @@ cd hexo
 npm install --save hexo-deployer-git
 hexo g
 hexo server
-## 前头 ##
+## 文章首部信息说明 ##
 ```
 categories:
 - Diary
@@ -73,10 +72,14 @@ categories:
 ```
 
 # 文章编译 #
-1.添加草稿
-hexo new draft demo
-2.发布文章
-hexo publish post demo
+1. 添加草稿
+>hexo new draft demo
+
+2. 添加笔记
+>hexo new post demo
+
+3. 发布文章
+>hexo publish post demo
 
 # 引用 #
 {% codeblock %}
