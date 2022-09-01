@@ -4,8 +4,9 @@ date:
 tags: 
 - obsidian
 categories:
-- [obsidian,使用]
+- [obsidian,使用,内容]
 ---
+
 # obsidian #
 obsidian笔记软件
 
@@ -41,4 +42,5 @@ obsidian笔记软件
 **名字：宏沉一笑**   
 **邮箱：whghcyx@outlook.com**  
 **个人网站：https://whg555.github.io**  
---
+
+---
